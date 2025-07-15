@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 7</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3 Cards Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      padding: 30px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 300px;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background-color: #f0f8ff;
+    }
+
+    .btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #009579;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: #00725f;
+      transform: scale(1.1);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h3>Contact Form</h3>
+    <form>
+      <label>Full Name:</label>
+      <input type="text" placeholder="Enter your name">
+      <label>Email:</label>
+      <input type="email" placeholder="Enter your email">
+      <label>Message:</label>
+      <textarea rows="4" placeholder="Type your message"></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </div>
+
+ 
+  <div class="card">
+    <h3>Student Grades</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Ahmed</td><td>90</td></tr>
+        <tr><td>2</td><td>Salma</td><td>85</td></tr>
+        <tr><td>3</td><td>Sami</td><td>78</td></tr>
+      </tbody>
+    </table>
+    <button class="btn">More Info</button>
+  </div>
+
+
+  <div class="card">
+    <h3>Shopping List</h3>
+    <ul>
+      <li>Milk</li>
+      <li>Eggs</li>
+      <li>Bread</li>
+    </ul>
+    <button class="btn">Edit List</button>
+  </div>
+
+</body>
+</html>
+
+</body>
+</html>

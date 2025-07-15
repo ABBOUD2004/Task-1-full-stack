@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>task 11</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f7;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #333366;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 200px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #4466cc;
+      color: white;
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      background-color: #666;
+      border-radius: 8px;
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Your Grade Evaluation</h1>
+
+  <input type="number" id="score" placeholder="Enter your score (0-100)" />
+  <br>
+  <button onclick="calculateGrade()">Evaluate</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateGrade() {
+      const score = parseInt(document.getElementById('score').value);
+      const resultDiv = document.getElementById('result');
+      let grade = "";
+
+      if (score >= 90 && score <= 100) {
+        grade = "Excellent";
+        resultDiv.style.backgroundColor = "#28a745"; //عايز بونص 
+      } else if (score >= 80) {
+        grade = "Very Good";
+        resultDiv.style.backgroundColor = "#17a2b8";
+      } else if (score >= 65) {
+        grade = "Good";
+        resultDiv.style.backgroundColor = "#ffc107";
+      } else if (score >= 50) {
+        grade = "Weak";
+        resultDiv.style.backgroundColor = "#fd7e14";
+      } else if (score >= 0) {
+        grade = "Very Weak";
+        resultDiv.style.backgroundColor = "#dc3545";
+      } else {
+        grade = "Invalid score";
+        resultDiv.style.backgroundColor = "#6c757d";
+      }
+
+      resultDiv.textContent = `Your grade is: ${grade}`;
+    }
+  </script>
+
+</body>
+</html>

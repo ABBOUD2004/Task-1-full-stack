@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>task 10</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f8;
+      padding: 50px;
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      font-size: 18px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter Student Name:</h2>
+  <input type="text" id="studentName" placeholder="Type your name here" oninput="handleTyping()" />
+  <br>
+  <button onclick="showResult()">Show Result</button>
+  
+  <div id="typingStatus"></div>
+  <div id="result"></div>
+
+  <script>
+    function handleTyping() {
+      document.getElementById('typingStatus').innerText = "User is typing...";
+    }
+
+    function showResult() {
+      const name = document.getElementById('studentName').value;
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerText = `Hello ${name} → Your result is: 90%`;
+    }
+  </script>
+
+</body>
+</html>
