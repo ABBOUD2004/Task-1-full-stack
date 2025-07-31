@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Student (POST)</title>
+  <style>
+    body { font-family: Arial; padding: 30px; }
+    input, button { padding: 10px; margin: 5px; }
+  </style>
+</head>
+<body>
+
+  <h2>Add New Student</h2>
+
+  <input type="text" id="name" placeholder="Enter name">
+  <input type="email" id="email" placeholder="Enter email">
+  <button onclick="addStudent()">Submit</button>
+
+  <p id="response"></p>
+
+  <script>
+    function addStudent() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+
+      fetch("http://localhost/day13/api_post.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email })
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("response").innerText = data.message || "Unknown response";
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById("response").innerText = "Request failed";
+      });
+    }
+  </script>
+
+</body>
+</html>

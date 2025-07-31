@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 40px auto;
+        }
+        th, td {
+            border: 1px solid #aaa;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Students </h2>
+
+<table id="studentsTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>phone</th>
+            <th>date_of_birth</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+
+<script>
+    fetch('http://localhost/day13/api_get.php')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.querySelector("#studentsTable tbody");
+
+            data.forEach(student => {
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${student.id}</td>
+                    <td>${student.name}</td>
+                    <td>${student.email}</td>
+                    <td>${student.phone}</td>
+                    <td>${student.date_of_birth}</td>
+                `;
+
+                tableBody.appendChild(row);
+            });
+        })
+        
+</script>
+
+</body>
+</html>
